@@ -1,8 +1,5 @@
 // Assignment code here
-const number = ["0","1","2","3","4","5","6","7","8","9"];
-const lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-const upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-const specialCharacter = ["	U+0021","U+0022","U+0023","U+0024","U+0025","U+0026","U+0027","U+0028","U+0029","U+002A","U+002F","U+005C","U+003C","U+003E",];
+
 
 function createPasswordLength() {
     var passwordLength = prompt("How many characters is your password? (Minimum 8 Maximum 128)");
@@ -14,35 +11,52 @@ function createPasswordLength() {
   };
   
   function passwordCharacters() {
-    alert("Thank you for using Kameron's Unique password generator. What types of characters does your password require?");
-    var forLowercase = prompt("Do you require lowercase?");
-    var forUppercase = prompt("Do you require uppercase?");
-    var forNumbers = prompt("Do you require numbers?");
-    var forCharacters = prompt("Do you require special characters?");
+    alert("What types of characters does your password require?");
+    // for lowercase
+    var forLowercase = confirm("Do you need lowercase?");
+    // for uppercase
+    var forUppercase = confirm("Do you need uppercase?");
+    // for numbers
+    var forNumbers = confirm("Do you need numbers?");
+    // for special characters
+    var forCharacters = confirm("Do you need special characters?");
+  
+    // array
     var confirmArray = new Array(forLowercase, forUppercase, forNumbers, forCharacters);
+    // array check
     var allPromptsFalseCheck = confirmArray.every( confirmElement  => !confirmElement );
+    
+    // if no
     if (allPromptsFalseCheck) {
        alert("Invalid response. What types of characters does your password require?")
        passwordCharacters();   
     };
+  
+    // valid character types
+    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const characters = `!"#$%&'()*+,-./:;<>=?@[]^_\\{}|~`;
+  
     var passwordCharacters = '';
+  
+    if (forLowercase) { 
+       passwordCharacters += lowercase; 
+    }
+    if (forUppercase) { 
+       passwordCharacters += uppercase; 
+    }
+    if (forNumbers) { 
+       passwordCharacters += numbers; 
+    }
+    if (forCharacters) { 
+       passwordCharacters += characters; 
+    }
+  
 
-  if (forLowercase == "Y", "yes") { 
-     passwordCharacters += lowerCase; 
-  }
-  if (forUppercase == "Y", "yes") { 
-     passwordCharacters += upperCase; 
-  }
-  if (forNumbers == "Y", "yes") { 
-     passwordCharacters += number; 
-  }
-  if (forCharacters == "Y", "yes") { 
-     passwordCharacters += specialCharacter; 
-  }
-
-  return passwordCharacters;
-};
-
+    return passwordCharacters;
+  };
+// creates the password with all options.
 function generatePassword() {
   var userLength = createPasswordLength();
   var userCharacters = passwordCharacters();
