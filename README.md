@@ -6,12 +6,12 @@ I was given the code for the website completed with HTML and CSS. The service I 
 
 ## Installation
 
-
+Please add script.js file to old projects missing it. 
 
 ## Usage
 
-![alttext](assets/images/website-top.png)
-![alttext](assets/images/website-bottom.png)
+![alttext](assets/images/site.png)
+
 
 ## Credits
 
