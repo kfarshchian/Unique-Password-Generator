@@ -9,7 +9,7 @@ I was given the code for the website completed with HTML and CSS. The service I 
 Please add script.js file to old projects missing it. 
 
 ## Usage
-
+https://kfarshchian.github.io/Unique-Password-Generator/
 ![alttext](assets/images/site.png)
 
 
