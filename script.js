@@ -32,7 +32,7 @@ function createPasswordLength() {
        passwordCharacters();   
     };
   
-    // valid character types
+    // character types
     const lowercase = 'abcdefghijklmnopqrstuvwxyz';
     const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const numbers = '0123456789';
